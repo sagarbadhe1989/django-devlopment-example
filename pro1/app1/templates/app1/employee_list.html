@@ -1,0 +1,22 @@
+{% extends "app1/app1_base.html" %}
+
+{% block body_block %}
+<div class="jumbotron">
+
+    <hr>
+
+    <h4> Employee List </h4>
+    
+    <hr>
+      <ol>
+        {% for employee in employee %}
+        <ul class="list-group">
+          <li><a href="{{employee.id}}/">{{employee.Name}} </a></li>
+        </ul>
+        {% endfor %}
+      </ol>
+      <hr>
+</div>
+
+
+{% endblock %}

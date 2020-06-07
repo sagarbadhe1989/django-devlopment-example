@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- BOOTSTRAP REFERENCES -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+  
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="http://127.0.0.1:8000/">FINSOUL</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="http://127.0.0.1:8000/">Home</a></li>
+          <li><a href="{% url 'app1:list' %}">Staff detail</a></li>
+          <li><a href="{% url 'admin:index' %}">Admin</a></li>
+
+        </ul>
+      </div>
+    </nav>
+
+  </head>
+  <body>
+
+
+    {% block body_block %}
+    {% endblock %}
+  </body>
+</html>

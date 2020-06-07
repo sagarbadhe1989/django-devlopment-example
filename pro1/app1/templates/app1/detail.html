@@ -1,0 +1,82 @@
+{% extends "app1/app1_base.html" %}
+
+{% block body_block %}
+
+{% for employment in employee_details.employment.all %}
+
+
+<br><br>
+<br><br>
+
+<h4>To,</h4>
+<h4>{{employee_details.Name}}</h4>
+<h4>Worli Mumbai 400018</h4>
+
+<br />
+<h4>Subject : Employement detail during service at IIT Bombay</h4>
+<br />
+  <h4>  Employee Details:</h4>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Employee Code</th>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Date of Birth</th>
+          <th scope="col">Gender</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{employee_details.id}}</th>
+          <td>{{employee_details.Employee_Code}}</td>
+          <td>{{employee_details.Name}}</td>
+          <td>{{employee_details.Age}}</td>
+          <td>{{employee_details.Birth_Date}}</td>
+          <td>{{employee_details.photo}} </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br><br>
+
+    <h4>  Employment Detail:</h4>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <th scope="row">Employment status</th>
+          <td>{{employment.Employment_status}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Joining Date</th>
+          <td>{{employment.Joining_Date}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Confirmation Date</th>
+          <td>{{employment.Confirmation_Date}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Probation Date</th>
+          <td>{{employment.Probation_Date}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Last Increment Given On</th>
+          <td>{{employment.Last_Increment_Given_On}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Resign offer Date (if any)</th>
+          <td>{{employment.Resign_offer_Date}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h5>Note: Employemnt detail of {{employee_details.Name}} w.e.f. {{employment.Joining_Date}}</h5>
+
+    <br><br><br><br><br><br>
+    <h5>Athorised Signature</h5>
+
+
+  {% endfor %}
+
+  {% endblock %}
